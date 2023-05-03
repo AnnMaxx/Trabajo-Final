@@ -1,9 +1,5 @@
 id Equipo; Nombre ; Descripción;
-1; Argentina; Seleccion;
-2; Brasil; Seleccion;
-3; Chile; Seleccion;
-4; Peru; Seleccion;
-5; Uruguay; Seleccion;
-6; Mexico; Seleccion;
-7; Colombia; Seleccion;
-8; Bolivia; Seleccion;
+1; Argentina;Seleccion;
+2; Chile;Seleccion;
+3; Bolivia;Seleccion;
+4; Peru;Seleccion;

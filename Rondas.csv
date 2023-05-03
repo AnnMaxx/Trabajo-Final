@@ -1,5 +1,7 @@
-NRonda;Descripcion;
-1;Primera Ronda;
-2;Segunda Ronda;
-3;Tercera Ronda;
-4;Cuarta Ronda;
+NFase;NRonda;Descripcion;
+1;1;Primera Ronda;
+1;2;Segunda Ronda;
+1;3;Tercera Ronda;
+2;1;Primera Ronda;
+2;2;Segunda Ronda;
+2;3;Tercera Ronda;
