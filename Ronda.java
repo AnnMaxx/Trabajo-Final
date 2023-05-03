@@ -11,10 +11,24 @@ import java.util.ArrayList;
  * @author pc
  */
 public class Ronda {
+    private int num_Fase;
     private int num_Ronda;
     private String Descripcion; 
     private ArrayList<Partido> l_Pdo;  
 
+    public Ronda (int num_Fase,int num_Ronda, String Descripcion){
+    
+        l_Pdo = new ArrayList<>(); 
+        this.num_Fase = num_Fase;
+        this.num_Ronda = num_Ronda;
+        this.Descripcion = Descripcion; 
+    }
+
+    public int getNum_Fase() {
+        return num_Fase;
+    }
+    
+        
     public int getNum_Ronda() {
         return num_Ronda;
     }
@@ -23,35 +37,20 @@ public class Ronda {
         return l_Pdo;
     }
 
-    public Ronda (int num_Ronda, String Descripcion){
-    
-    l_Pdo = new ArrayList<>(); 
-    this.num_Ronda = num_Ronda;
-    this.Descripcion = Descripcion; 
-    
-    }
-
+       
     public String getDescripcion() {
         return Descripcion;
     }
     
     // Agrega los Partidos de cada Ronda
     
-    public void Agregar_P(ArrayList<Partido> l_Pdo) {
-        for (int i=0; i< l_Pdo.size(); i++){
-             if (num_Ronda == l_Pdo.get(i).getNum_ronda()){
-                 this.l_Pdo.add(l_Pdo.get(i)); 
-             
-             }
-        }
-         
+    public void Agregar_Partido(Partido partido){
+        l_Pdo.add(partido); 
     }
     
+    public int Cant_Partido(){
+        return l_Pdo.size(); 
     
-     
-    @Override
-    public String toString() {
-        return "Ronda{" + "num_Ronda=" + num_Ronda + ", Descripcion=" + Descripcion + ", l_Pdo=" + l_Pdo + '}';
     }
-  
+
 }

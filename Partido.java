@@ -8,13 +8,14 @@ import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  *
  * @author pc
  */
 public class Partido {
+    private int num_fase; 
     private int num_ronda; 
     private int id_partido;
     private Equipo equipo1; 
@@ -23,8 +24,9 @@ public class Partido {
     private int Golequipo2;
     private ArrayList<Pronostico> l_pp;  
 
-    public Partido(int num_ronda, int id_partido, Equipo equipo1, Equipo equipo2, int Golequipo1, int Golequipo2) {
+    public Partido(int num_fase,int num_ronda, int id_partido, Equipo equipo1, Equipo equipo2, int Golequipo1, int Golequipo2) {
         l_pp = new ArrayList(); 
+        this.num_fase = num_fase;
         this.num_ronda = num_ronda;
         this.id_partido = id_partido;
         this.equipo1 = equipo1;
@@ -33,6 +35,11 @@ public class Partido {
         this.Golequipo2 = Golequipo2;
     }
 
+    public int getNum_fase() {
+        return num_fase;
+    }
+
+    
     public int getNum_ronda() {
         return num_ronda;
     }
@@ -87,26 +94,13 @@ public class Partido {
     
     }
     
+    // Agrega los Pronosticos a cada Partido
     
-    // Agrega los Pronosticos de cada partido y suma puntaje a cada acierto
-      
-    public void Agregar_P(ArrayList<Pronostico> l_pp) {
-        for (int p=0; p<l_pp.size(); p++){
-            if (num_ronda == l_pp.get(p).getId_ronda() && id_partido == l_pp.get(p).getId_Partido()){
-                this.l_pp.add(l_pp.get(p)); 
-                if (this.resultado()== l_pp.get(p).getApuesta()) {
-                l_pp.get(p).getPersona().suma_Puntaje();
-                } 
-            }
-        }
-    }    
+    public void Agrega_Partido(Pronostico pronostico){
+        l_pp.add(pronostico);
     
-    
-    @Override
-    public String toString() {
-        return "Partido{" + "num_ronda=" + num_ronda + ", id_partido=" + id_partido + ", equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", Golequipo1=" + Golequipo1 + ", Golequipo2=" + Golequipo2 + ", l_pp=" + l_pp + '}';
     }
-   
+ 
 }
   
   

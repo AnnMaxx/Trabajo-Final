@@ -32,10 +32,4 @@ public class Equipo {
         return Descripcion;
     }
 
-       
-    @Override
-    public String toString() {
-        return "Equipo{" + "id_equipo=" + id_equipo + ", Descripcion=" + Descripcion + '}';
-    }
-
 }
